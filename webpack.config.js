@@ -13,5 +13,9 @@ module.exports = getConfig({
   // get a fresh folder. Usually you want this
   // but since it's destructive we make it
   // false by default
-  clearBeforeBuild: true
+  clearBeforeBuild: true,
+  // Specifies whether we are in production or
+  // development to determine the outcome of
+  // running webpack
+  isDev: process.env.NODE_ENV !== 'production'
 })
