@@ -1,4 +1,6 @@
 var getConfig = require('hjs-webpack')
+var layout = require('./src/pre-render/layout')
+var head = require('./src/pre-render/head')
 
 module.exports = getConfig({
   // entry point for the app
@@ -17,5 +19,14 @@ module.exports = getConfig({
   // Specifies whether we are in production or
   // development to determine the outcome of
   // running webpack
-  isDev: process.env.NODE_ENV !== 'production'
+  isDev: process.env.NODE_ENV !== 'production',
+  // Pre-render all known structural content for
+  // a Native Web App to static files. Users get
+  // pixels on the screen immediately, your JS
+  // takes over when downloaded.
+  html: function (data) {
+    return {
+      'index.html': data.defaultTemplate({html: layout, head: head})
+    }
+  }
 })
