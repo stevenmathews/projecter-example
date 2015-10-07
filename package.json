@@ -1,7 +1,7 @@
 {
   "name": "projecter",
   "description": "Base for new projects to save time.",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Steve Mathews <stevenmathews.nz@gmail.com>",
   "bugs": {
     "url": "https://github.com/stevenmathews/projecter/issues"
