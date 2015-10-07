@@ -21,6 +21,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --inline --quiet",
+    "standard": "standard",
     "build": "NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +29,7 @@
     "autoprefixer": "^6.0.3",
     "babel": "^5.8.23",
     "babel-core": "^5.8.25",
+    "babel-eslint": "^4.1.3",
     "babel-loader": "^5.3.2",
     "css-loader": "^0.19.0",
     "file-loader": "^0.8.4",
@@ -36,11 +38,16 @@
     "postcss-loader": "^0.6.0",
     "react": "^0.13.3",
     "react-hot-loader": "^1.3.0",
+    "standard": "^5.3.1",
     "style-loader": "^0.12.4",
     "stylus-loader": "^1.3.1",
     "url-loader": "^0.5.6",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.0",
     "yeticss": "^7.0.5"
+  },
+  "standard": {
+    "ignore": "pre-render/*",
+    "parser": "babel-eslint"
   }
 }
