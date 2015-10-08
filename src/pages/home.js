@@ -14,19 +14,19 @@ export default React.createClass({
           <li>
             <a href='https://webpack.github.io/' target='_blank'>
               <h4>Webpack</h4>
-              <p>Helpers/presets for setting up webpack with hotloading react and ES6(2015) using Babel.</p>
+              <p>Configured with hotloading react and ES6 using Babel</p>
             </a>
           </li>
           <li>
             <a href='https://karma-runner.github.io/' target='_blank'>
               <h4>Karma</h4>
-              <p>Test runner that allows you to execute JavaScript code in multiple real browsers.</p>
+              <p>Test runner that allows you to execute JavaScript code in multiple real browsers</p>
             </a>
           </li>
           <li>
             <a href='https://travis-ci.org/' target='_blank'>
               <h4>Travis</h4>
-              <p>Hosted continuous integration and deployment system.</p>
+              <p>Hosted continuous integration and deployment system</p>
             </a>
           </li>
         </ul>
