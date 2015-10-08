@@ -5,6 +5,10 @@ import localLinks from 'local-links'
 export default React.createClass({
   displayName: 'NavHelper',
 
+  propTypes: {
+    children: React.PropTypes.node
+  },
+
   onClick (event) {
     const pathname = localLinks.getLocalPathname(event)
     if (pathname) {

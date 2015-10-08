@@ -4,6 +4,10 @@ import NavHelper from './components/nav-helper'
 export default React.createClass({
   displayName: 'Layout',
 
+  propTypes: {
+    children: React.PropTypes.node
+  },
+
   render () {
     return (
       <NavHelper>
