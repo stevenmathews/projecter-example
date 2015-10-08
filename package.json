@@ -49,5 +49,8 @@
   "standard": {
     "ignore": "pre-render/*",
     "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "ampersand-router": "^3.0.2"
   }
 }
