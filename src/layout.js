@@ -1,11 +1,12 @@
 import React from 'react'
+import NavHelper from './components/nav-helper'
 
 export default React.createClass({
   displayName: 'Layout',
 
   render () {
     return (
-      <div>
+      <NavHelper>
         <header className='header'>
           <a href='/'>
             <div className='logo'></div>
@@ -19,7 +20,7 @@ export default React.createClass({
         <div className='container'>
           {this.props.children}
         </div>
-      </div>
+      </NavHelper>
     )
   }
 })
