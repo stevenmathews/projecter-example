@@ -2,6 +2,7 @@ import Router from 'ampersand-router'
 import React from 'react'
 import HomePage from './pages/home'
 import ContactPage from './pages/contact'
+import NotFoundPage from './pages/not-found'
 import Layout from './layout'
 
 export default Router.extend({
@@ -18,7 +19,8 @@ export default Router.extend({
 
   routes: {
     '': 'home',
-    'contact': 'contact'
+    'contact': 'contact',
+    '*notFound': 'notFound'
   },
 
   home () {
@@ -27,5 +29,9 @@ export default Router.extend({
 
   contact () {
     this.renderPage(<ContactPage/>)
+  },
+
+  notFound () {
+    this.renderPage(<NotFoundPage/>)
   }
 })
