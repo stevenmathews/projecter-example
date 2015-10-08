@@ -2,8 +2,8 @@ require('babel/register')
 var getConfig = require('hjs-webpack')
 var React = require('react')
 var Layout = require('./src/layout')
+var NotFoundPage = require('./src/pages/not-found')
 var head = require('./src/pre-render/head')
-var notFound = require('./src/pre-render/not-found')
 
 module.exports = getConfig({
   // entry point for the app
@@ -29,9 +29,10 @@ module.exports = getConfig({
   // takes over when downloaded.
   html: function (data) {
     var layoutHtml = React.renderToString(React.createElement(Layout))
+    var notFoundHtml = React.renderToString(React.createElement(NotFoundPage))
     return {
       'index.html': data.defaultTemplate({html: layoutHtml, head: head}),
-      '200.html': data.defaultTemplate({html: notFound})
+      '200.html': data.defaultTemplate({html: notFoundHtml})
     }
   }
 })
