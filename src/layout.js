@@ -13,8 +13,10 @@ export default React.createClass({
             <h1 className='title'>Projecter.js</h1>
           </a>
           <nav>
-            <a className='nav button-outlined' href='/'>Home</a>
-            <a className='nav button-outlined' href='/contact'>Contact</a>
+            <div className='button-group'>
+              <a className='nav button-outlined' href='/'>Home</a>
+              <a className='nav button-outlined' href='/contact'>Contact</a>
+            </div>
           </nav>
         </header>
         <div className='container'>
