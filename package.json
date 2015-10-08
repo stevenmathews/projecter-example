@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "ampersand-app": "^1.0.4",
-    "ampersand-router": "^3.0.2"
+    "ampersand-router": "^3.0.2",
+    "local-links": "^1.4.0"
   }
 }

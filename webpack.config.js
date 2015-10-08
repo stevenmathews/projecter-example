@@ -1,7 +1,12 @@
+require('babel/register')
 var getConfig = require('hjs-webpack')
-var layout = require('./src/pre-render/layout')
-var head = require('./src/pre-render/head')
-var notFound = require('./src/pre-render/not-found')
+var React = require('react')
+var Layout = require('./src/layout')
+var NotFoundPage = require('./src/pages/not-found')
+var head = [
+  '<title>Projecter</title>',
+  '<link rel="shortcut icon" href="http://s12.postimg.org/xvnmsnyuh/favicon.png" type="image/x-icon"/>'
+].join('')
 
 module.exports = getConfig({
   // entry point for the app
@@ -26,9 +31,11 @@ module.exports = getConfig({
   // pixels on the screen immediately, your JS
   // takes over when downloaded.
   html: function (data) {
+    var layoutHtml = React.renderToString(React.createElement(Layout))
+    var notFoundHtml = React.renderToString(React.createElement(NotFoundPage))
     return {
-      'index.html': data.defaultTemplate({html: layout, head: head}),
-      '200.html': data.defaultTemplate({html: notFound})
+      'index.html': data.defaultTemplate({html: layoutHtml, head: head}),
+      '200.html': data.defaultTemplate({html: notFoundHtml})
     }
   }
 })
