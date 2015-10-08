@@ -1,5 +1,7 @@
+require('babel/register')
 var getConfig = require('hjs-webpack')
-var layout = require('./src/pre-render/layout')
+var React = require('react')
+var Layout = require('./src/layout')
 var head = require('./src/pre-render/head')
 var notFound = require('./src/pre-render/not-found')
 
@@ -26,8 +28,9 @@ module.exports = getConfig({
   // pixels on the screen immediately, your JS
   // takes over when downloaded.
   html: function (data) {
+    var layoutHtml = React.renderToString(React.createElement(Layout))
     return {
-      'index.html': data.defaultTemplate({html: layout, head: head}),
+      'index.html': data.defaultTemplate({html: layoutHtml, head: head}),
       '200.html': data.defaultTemplate({html: notFound})
     }
   }
