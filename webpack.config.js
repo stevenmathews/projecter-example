@@ -3,7 +3,10 @@ var getConfig = require('hjs-webpack')
 var React = require('react')
 var Layout = require('./src/layout')
 var NotFoundPage = require('./src/pages/not-found')
-var head = require('./src/pre-render/head')
+var head = [
+  '<title>Projecter</title>',
+  '<link rel="shortcut icon" href="http://s12.postimg.org/xvnmsnyuh/favicon.png" type="image/x-icon"/>'
+].join('')
 
 module.exports = getConfig({
   // entry point for the app
