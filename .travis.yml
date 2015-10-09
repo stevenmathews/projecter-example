@@ -1,0 +1,21 @@
+# specify language
+language: node_js
+# specify language options
+node_js:
+  - "4.1.1"
+# turn off email notifications
+notifications:
+  email: false
+
+## Build steps for testing
+####################
+before_script:
+  # run browser with virtual screen
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+
+## Deployment steps
+####################
+after_success:
+  - npm run build
+  - npm run deploy
