@@ -22,8 +22,8 @@
   "scripts": {
     "start": "webpack-dev-server --inline --quiet",
     "karma": "standard && karma start",
-    "build": "NODE_ENV=production webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start --single-run --browsers Firefox",
+    "build": "NODE_ENV=production webpack"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
@@ -37,6 +37,7 @@
     "json-loader": "^0.5.3",
     "karma": "^0.13.10",
     "karma-chrome-launcher": "^0.2.1",
+    "karma-firefox-launcher": "^0.1.6",
     "karma-mocha": "^0.2.0",
     "karma-mocha-reporter": "^1.1.1",
     "karma-sinon-chai": "^1.1.0",
