@@ -24,7 +24,7 @@ export default React.createClass({
             <a href='https://karma-runner.github.io/' target='_blank'>
               <div className='karma-logo'></div>
               <h4>Karma</h4>
-              <p>Test runner that allows you to execute JavaScript code in multiple real browsers</p>
+              <p>Test runner executing JavaScript in multiple real browsers</p>
             </a>
           </div>
           <div className='travis'>
