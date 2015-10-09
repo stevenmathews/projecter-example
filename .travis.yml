@@ -13,3 +13,9 @@ before_script:
   # run browser with virtual screen
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
+
+## Deployment steps
+####################
+after_success:
+  - npm run build
+  - npm run deploy
