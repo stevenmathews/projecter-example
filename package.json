@@ -1,7 +1,7 @@
 {
   "name": "projecter",
   "description": "Base for new projects to save time.",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": "Steve Mathews <stevenmathews.nz@gmail.com>",
   "bugs": {
     "url": "https://github.com/stevenmathews/projecter/issues"
@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --inline --quiet",
-    "standard": "standard",
+    "karma": "standard && karma start",
     "build": "NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -35,6 +35,14 @@
     "file-loader": "^0.8.4",
     "hjs-webpack": "^2.13.2",
     "json-loader": "^0.5.3",
+    "karma": "^0.13.10",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-sinon-chai": "^1.1.0",
+    "karma-sourcemap-loader": "^0.3.5",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.3.3",
     "postcss-loader": "^0.6.0",
     "react": "^0.13.3",
     "react-hot-loader": "^1.3.0",
@@ -47,7 +55,11 @@
     "yeticss": "^7.0.5"
   },
   "standard": {
-    "ignore": "pre-render/*",
+    "globals": [
+      "describe",
+      "it",
+      "expect"
+    ],
     "parser": "babel-eslint"
   },
   "dependencies": {
