@@ -3,6 +3,9 @@ language: node_js
 # specify language options
 node_js:
   - "4.1.1"
+# turn off email notifications
+notifications:
+  email: false
 
 ## Build steps for testing
 ####################
