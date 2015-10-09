@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --inline --quiet",
-    "standard": "standard",
+    "karma": "standard && karma start",
     "build": "NODE_ENV=production webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
