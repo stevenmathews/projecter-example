@@ -13,17 +13,17 @@ Includes npm scripts/dependencies, config files, and a basic example app.
 Meant to be a starting point - just remove/change as needed.
 
 ## Scripts
-- `npm start`: [webpack](http://webpack.github.io/docs/webpack-dev-server.html) hotloading dev server 
-- `npm run karma`: linting using [standard](https://github.com/feross/standard) then [karma](https://karma-runner.github.io/0.13/index.html) hotloading test runner 
-- `npm test`: used by [travis](https://travis-ci.org/) for integration testing
-- `npm run build`: webpack minifies and bundles project into static files
-- `npm run deploy`: static files deployed using [surge](https://surge.sh/)
+- `npm start` [webpack](http://webpack.github.io/docs/webpack-dev-server.html) hotloading dev server 
+- `npm run karma` linting using [standard](https://github.com/feross/standard) then [karma](https://karma-runner.github.io/0.13/index.html) hotloading test runner 
+- `npm test` used by [travis](https://travis-ci.org/) for integration testing
+- `npm run build` webpack minifies and bundles project into static files
+- `npm run deploy` static files deployed using [surge](https://surge.sh/)
 
 ## Configuration
-- [webpack](http://webpack.github.io/docs/configuration.html): webpack.config.js using [hjs-webpack](https://github.com/HenrikJoreteg/hjs-webpack) for easy configuration
-- [standard](https://github.com/feross/standard): options in package.json
-- [karma](https://karma-runner.github.io/0.13/config/configuration-file.html): karma.conf.js
-- [travis](http://docs.travis-ci.com/user/customizing-the-build/): .travis.yml
+- [webpack](http://webpack.github.io/docs/configuration.html) webpack.config.js using [hjs-webpack](https://github.com/HenrikJoreteg/hjs-webpack) for easy configuration
+- [standard](https://github.com/feross/standard) options in package.json
+- [karma](https://karma-runner.github.io/0.13/config/configuration-file.html) karma.conf.js
+- [travis](http://docs.travis-ci.com/user/customizing-the-build/) .travis.yml
 
 ## Accounts Setup
 - Accounts are required for [travis](https://travis-ci.org/) (free for open source) and [surge](https://surge.sh/) (free).
