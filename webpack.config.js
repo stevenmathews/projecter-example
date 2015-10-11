@@ -1,6 +1,7 @@
 require('babel/register')
 var getConfig = require('hjs-webpack')
 var React = require('react')
+var ReactDOMServer = require('react-dom/server')
 var Layout = require('./src/layout')
 var NotFoundPage = require('./src/pages/not-found')
 var head = [
@@ -31,8 +32,8 @@ module.exports = getConfig({
   // pixels on the screen immediately, your JS
   // takes over when downloaded.
   html: function (data) {
-    var layoutHtml = React.renderToString(React.createElement(Layout))
-    var notFoundHtml = React.renderToString(React.createElement(NotFoundPage))
+    var layoutHtml = ReactDOMServer.renderToString(React.createElement(Layout))
+    var notFoundHtml = ReactDOMServer.renderToString(React.createElement(NotFoundPage))
     return {
       'index.html': data.defaultTemplate({html: layoutHtml, head: head}),
       '200.html': data.defaultTemplate({html: notFoundHtml})
