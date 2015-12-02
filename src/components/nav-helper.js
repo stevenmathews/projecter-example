@@ -2,12 +2,10 @@ import React from 'react'
 import app from 'ampersand-app'
 import localLinks from 'local-links'
 
-export default React.createClass({
-  displayName: 'NavHelper',
-
-  propTypes: {
+class NavHelper extends React.Component {
+  static propTypes = {
     children: React.PropTypes.node
-  },
+  }
 
   onClick (event) {
     const pathname = localLinks.getLocalPathname(event)
@@ -15,7 +13,7 @@ export default React.createClass({
       event.preventDefault()
       app.router.history.navigate(pathname)
     }
-  },
+  }
 
   render () {
     return (
@@ -24,4 +22,6 @@ export default React.createClass({
       </div>
     )
   }
-})
+}
+
+export default NavHelper

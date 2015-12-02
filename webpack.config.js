@@ -1,9 +1,9 @@
-require('babel/register')
+require('babel-core/register')
 var getConfig = require('hjs-webpack')
 var React = require('react')
 var ReactDOMServer = require('react-dom/server')
-var Layout = require('./src/layout')
-var NotFoundPage = require('./src/pages/not-found')
+var Layout = require('./src/layout').default
+var NotFoundPage = require('./src/pages/not-found').default
 var head = [
   '<title>Projecter</title>',
   '<link rel="shortcut icon" href="http://s12.postimg.org/xvnmsnyuh/favicon.png" type="image/x-icon"/>'
