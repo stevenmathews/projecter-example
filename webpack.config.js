@@ -4,14 +4,17 @@ var React = require('react')
 var ReactDOMServer = require('react-dom/server')
 var Layout = require('./src/layout').default
 var NotFound = require('./src/pages/not-found').default
+var HomePage = require('./src/pages/home').default
+var HomePageElement = React.createElement(HomePage)
+
 var head = [
   '<title>Projecter</title>',
   '<link rel="shortcut icon" href="http://s12.postimg.org/xvnmsnyuh/favicon.png" type="image/x-icon"/>'
 ].join('')
 
 var addRootDiv = (elementString) => `<div id='root'>${elementString}</div>`
-var createHtmlString = (component) => {
-  var element = React.createElement(Layout)
+var createHtmlString = (component, props) => {
+  var element = React.createElement(component, props)
   var elementString = ReactDOMServer.renderToString(element)
   return addRootDiv(elementString)
 }
@@ -19,27 +22,20 @@ var createHtmlString = (component) => {
 module.exports = getConfig({
   // entry point for the app
   in: 'src/app.js',
-  // Name or full path of output directory
-  // commonly named `www` or `public`. This
-  // is where your fully static site should
-  // end up for simple deployment.
+  // Name or full path of output directory commonly named `www` or `public`.
+  // This is where your fully static site should end up for simple deployment.
   out: 'public',
-  // This will destroy and re-create your
-  // `out` folder before building so you always
-  // get a fresh folder. Usually you want this
-  // but since it's destructive we make it
-  // false by default
+  // This will destroy and re-create your `out` folder before building so you
+  // always get a fresh folder. Usually you want this but since it's destructive
+  // we make it false by default.
   clearBeforeBuild: '!(images)',
-  // Specifies whether we are in production or
-  // development to determine the outcome of
-  // running webpack
+  // Specifies whether we are in production or development to determine the
+  // outcome of running webpack.
   isDev: process.env.NODE_ENV !== 'production',
-  // Pre-render all known structural content for
-  // a Native Web App to static files. Users get
-  // pixels on the screen immediately, your JS
-  // takes over when downloaded.
+  // Pre-render all known structural content for a Native Web App to static files.
+  // Users get pixels on screen immediately, your JS takes over when downloaded.
   html: function (data) {
-    var layoutHtml = createHtmlString(Layout)
+    var layoutHtml = createHtmlString(Layout, {children: HomePageElement})
     var notFoundHtml = createHtmlString(NotFound)
     return {
       'index.html': data.defaultTemplate({html: layoutHtml, head: head}),
