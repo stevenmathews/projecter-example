@@ -1,12 +1,10 @@
 import React from 'react'
 import NavHelper from './components/nav-helper'
 
-export default React.createClass({
-  displayName: 'Layout',
-
-  propTypes: {
+class Layout extends React.Component {
+  static propTypes = {
     children: React.PropTypes.node
-  },
+  }
 
   render () {
     return (
@@ -29,4 +27,6 @@ export default React.createClass({
       </NavHelper>
     )
   }
-})
+}
+
+export default Layout
