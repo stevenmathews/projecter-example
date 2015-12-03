@@ -1,21 +1,21 @@
 require('babel-core/register')
-var getConfig = require('hjs-webpack')
-var React = require('react')
-var ReactDOMServer = require('react-dom/server')
-var Layout = require('./src/layout').default
-var NotFound = require('./src/pages/not-found').default
-var HomePage = require('./src/pages/home').default
-var HomePageElement = React.createElement(HomePage)
+const getConfig = require('hjs-webpack')
+const React = require('react')
+const ReactDOMServer = require('react-dom/server')
+const Layout = require('./src/layout').default
+const NotFound = require('./src/pages/not-found').default
+const HomePage = require('./src/pages/home').default
+const HomePageElement = React.createElement(HomePage)
 
-var head = [
+const head = [
   '<title>Projecter</title>',
   '<link rel="shortcut icon" href="http://s12.postimg.org/xvnmsnyuh/favicon.png" type="image/x-icon"/>'
 ].join('')
 
-var addRootDiv = (elementString) => `<div id='root'>${elementString}</div>`
-var createHtmlString = (component, props) => {
-  var element = React.createElement(component, props)
-  var elementString = ReactDOMServer.renderToString(element)
+const addRootDiv = (elementString) => `<div id='root'>${elementString}</div>`
+const createHtmlString = (component, props) => {
+  const element = React.createElement(component, props)
+  const elementString = ReactDOMServer.renderToString(element)
   return addRootDiv(elementString)
 }
 
@@ -35,8 +35,8 @@ module.exports = getConfig({
   // Pre-render all known structural content for a Native Web App to static files.
   // Users get pixels on screen immediately, your JS takes over when downloaded.
   html: function (data) {
-    var layoutHtml = createHtmlString(Layout, {children: HomePageElement})
-    var notFoundHtml = createHtmlString(NotFound)
+    const layoutHtml = createHtmlString(Layout, {children: HomePageElement})
+    const notFoundHtml = createHtmlString(NotFound)
     return {
       'index.html': data.defaultTemplate({html: layoutHtml, head: head}),
       '200.html': data.defaultTemplate({html: notFoundHtml})
