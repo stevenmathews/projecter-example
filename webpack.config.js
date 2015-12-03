@@ -1,23 +1,6 @@
 require('babel-core/register')
 const getConfig = require('hjs-webpack')
-const React = require('react')
-const ReactDOMServer = require('react-dom/server')
-const Layout = require('./src/layout').default
-const NotFound = require('./src/pages/not-found').default
-const HomePage = require('./src/pages/home').default
-const HomePageElement = React.createElement(HomePage)
-
-const head = [
-  '<title>Projecter</title>',
-  '<link rel="shortcut icon" href="http://s12.postimg.org/xvnmsnyuh/favicon.png" type="image/x-icon"/>'
-].join('')
-
-const addRootDiv = (elementString) => `<div id='root'>${elementString}</div>`
-const createHtmlString = (component, props) => {
-  const element = React.createElement(component, props)
-  const elementString = ReactDOMServer.renderToString(element)
-  return addRootDiv(elementString)
-}
+const htmlToPrerender = require('./src/prerender/html-to-prerender').default
 
 module.exports = getConfig({
   // entry point for the app
@@ -34,12 +17,7 @@ module.exports = getConfig({
   isDev: process.env.NODE_ENV !== 'production',
   // Pre-render all known structural content for a Native Web App to static files.
   // Users get pixels on screen immediately, your JS takes over when downloaded.
-  html: function (data) {
-    const layoutHtml = createHtmlString(Layout, {children: HomePageElement})
-    const notFoundHtml = createHtmlString(NotFound)
-    return {
-      'index.html': data.defaultTemplate({html: layoutHtml, head: head}),
-      '200.html': data.defaultTemplate({html: notFoundHtml})
-    }
+  html: function (context) {
+    return htmlToPrerender(context)
   }
 })
