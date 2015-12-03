@@ -1,5 +1,6 @@
 import Router from 'ampersand-router'
 import React from 'react'
+import ReactDOM from 'react-dom'
 import HomePage from './pages/home'
 import ContactPage from './pages/contact'
 import NotFoundPage from './pages/not-found'
@@ -14,7 +15,7 @@ export default Router.extend({
         </Layout>
       )
     }
-    React.render(page, document.body)
+    ReactDOM.render(page, document.body)
   },
 
   routes: {
