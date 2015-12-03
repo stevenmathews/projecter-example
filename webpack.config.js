@@ -3,11 +3,18 @@ var getConfig = require('hjs-webpack')
 var React = require('react')
 var ReactDOMServer = require('react-dom/server')
 var Layout = require('./src/layout').default
-var NotFoundPage = require('./src/pages/not-found').default
+var NotFound = require('./src/pages/not-found').default
 var head = [
   '<title>Projecter</title>',
   '<link rel="shortcut icon" href="http://s12.postimg.org/xvnmsnyuh/favicon.png" type="image/x-icon"/>'
 ].join('')
+
+var addRootDiv = (elementString) => `<div id='root'>${elementString}</div>`
+var createHtmlString = (component) => {
+  var element = React.createElement(Layout)
+  var elementString = ReactDOMServer.renderToString(element)
+  return addRootDiv(elementString)
+}
 
 module.exports = getConfig({
   // entry point for the app
@@ -32,8 +39,8 @@ module.exports = getConfig({
   // pixels on the screen immediately, your JS
   // takes over when downloaded.
   html: function (data) {
-    var layoutHtml = ReactDOMServer.renderToString(React.createElement(Layout))
-    var notFoundHtml = ReactDOMServer.renderToString(React.createElement(NotFoundPage))
+    var layoutHtml = createHtmlString(Layout)
+    var notFoundHtml = createHtmlString(NotFound)
     return {
       'index.html': data.defaultTemplate({html: layoutHtml, head: head}),
       '200.html': data.defaultTemplate({html: notFoundHtml})
