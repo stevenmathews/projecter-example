@@ -1,12 +1,12 @@
 {
-  "name": "projecter",
-  "description": "Base for new projects to save time.",
+  "name": "projecter-example",
+  "description": "Example of using projecter",
   "version": "0.11.0",
   "author": "Steve Mathews <stevenmathews.nz@gmail.com>",
   "bugs": {
-    "url": "https://github.com/stevenmathews/projecter/issues"
+    "url": "https://github.com/stevenmathews/projecter-example/issues"
   },
-  "homepage": "https://github.com/stevenmathews/projecter#readme",
+  "homepage": "https://github.com/stevenmathews/projecter-example#readme",
   "keywords": [
     "projecter",
     "boilerplate",
@@ -17,7 +17,7 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stevenmathews/projecter.git"
+    "url": "git+https://github.com/stevenmathews/projecter-example.git"
   },
   "scripts": {
     "start": "webpack-dev-server --inline --quiet",

@@ -1,11 +1,11 @@
-[![Build Status](https://travis-ci.org/stevenmathews/projecter.svg?branch=master)](https://travis-ci.org/stevenmathews/projecter)
-[![Dependency Status](https://david-dm.org/stevenmathews/projecter.svg)](https://david-dm.org/stevenmathews/projecter)
-[![devDependency Status](https://david-dm.org/stevenmathews/projecter/dev-status.svg)](https://david-dm.org/stevenmathews/projecter#info=devDependencies)
+[![Build Status](https://travis-ci.org/stevenmathews/projecter-example.svg?branch=master)](https://travis-ci.org/stevenmathews/projecter-example)
+[![Dependency Status](https://david-dm.org/stevenmathews/projecter-example.svg)](https://david-dm.org/stevenmathews/projecter-example)
+[![devDependency Status](https://david-dm.org/stevenmathews/projecter-example/dev-status.svg)](https://david-dm.org/stevenmathews/projecter-example#info=devDependencies)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
-# Projecter
+# Projecter Example
 
-[Projecter](http://projecter.surge.sh/) is a base for new javascript projects to save time.
+This is an [example](http://projecter.surge.sh/) of using [projecter](https://github.com/stevenmathews/projecter) as a base for new javascript projects to save time.
 
 Includes npm scripts/dependencies, config files, and a basic example app.
 
