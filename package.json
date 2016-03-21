@@ -1,7 +1,7 @@
 {
   "name": "projecter-example",
   "description": "Example of using projecter",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "author": "Steve Mathews <stevenmathews.nz@gmail.com>",
   "bugs": {
     "url": "https://github.com/stevenmathews/projecter-example/issues"
